@@ -2,6 +2,7 @@
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import serverless from 'serverless-http';
 import subscriberRoutes from './routes/subscribersRoute.js'
 
 dotenv.config()
@@ -21,3 +22,7 @@ app.use('/api', subscriberRoutes)
 app.listen(5000, () => {
   console.log(`Server running on http://localhost:${5000}`)
 })
+
+
+
+export const handler = serverless(app);
