@@ -1,13 +1,10 @@
 
 import express from 'express';
-import { createNewSubscriber } from './../controllers/subscribersController.js';
-import { createExistingSubscriber } from './../controllers/subscribersController.js';
+import { createSubscriber } from './../controllers/subscribersController.js';
  
 
 const router = express.Router();
 
-
-router.post('/newSubscribe', createNewSubscriber );
-router.post('/existingSubscribe', createExistingSubscriber)
+router.post('/subscribe', createSubscriber );
 
 export default router;
